@@ -1,0 +1,7 @@
+{
+  "name": "mobile-invoice-payment",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
