@@ -1,0 +1,74 @@
+<div class="welcome-screen">
+  <div class="welcome-screen-container">
+    <div class="logo-container" [class.move-to-top-anim-1]="moveToTopAnim1">
+      <h1 class="___hidden welcome-title welcome-title--ar delay-250ms">
+        سونلغاز
+      </h1>
+      <div class="h-5"></div>
+
+      <div class="flex">
+        <img
+          class="___hidden"
+          src="../../../assets/img/logo-sonelgaz-without-text.png"
+          alt=""
+        />
+      </div>
+
+      <div class="h-5"></div>
+      <h1 class="___hidden welcome-title">Sonelgaz</h1>
+      <div class="h-50"></div>
+
+      <h1 class="___hidden delay-2350ms big-welcome-title">
+        Verification code
+      </h1>
+
+      <div class="h-10"></div>
+
+      <p class="___hidden welcome-text">
+        Please enter the code we sent to <strong>{{ loginData.email }}</strong>
+      </p>
+
+      <div class="h-20"></div>
+
+      <div class="___hidden delay-2650ms flex">
+        <p-inputotp [(ngModel)]="loginData.code" [length]="6" size="large" />
+      </div>
+
+      <div class="h-30"></div>
+
+      <div
+        class="___hidden delay-2650ms flex padding-0-20 justify-content-space-between gap-10"
+      >
+        <p-button
+          [disabled]="DEFAULT_EMAIL_VERIFICATION_CODE_REMAINING_TIME > 0"
+          class="auth-button--link"
+          [link]="true"
+          label="Resend code {{
+            DEFAULT_EMAIL_VERIFICATION_CODE_REMAINING_TIME
+          }}"
+          (onClick)="resentCode()"
+        />
+
+        <p-button
+          class="auth-button--code-verification"
+          label="Submit Code "
+          [disabled]="
+            loginData.code.length < DEFAULT_EMAIL_VERIFICATION_CODE_LENGTH
+          "
+          (onClick)="submitCode()"
+          [loading]="isValidatingCode"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="branding">
+    <p class="___hidden">&#169; Sonelgaz - {{ currentYear }}</p>
+
+    <img
+      class="___hidden"
+      src="../../../assets/img/logo-sonelgaz-white.png"
+      alt=""
+    />
+  </div>
+</div>

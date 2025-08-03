@@ -1,5 +1,11 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/standalone';
+import { Router } from '@angular/router';
+import {
+  IonHeader,
+  IonToolbar,
+  IonTitle,
+  IonContent,
+} from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +14,18 @@ import { IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/angular/stan
   imports: [IonHeader, IonToolbar, IonTitle, IonContent],
 })
 export class HomePage {
-  constructor() {}
+  public isUserOnline: boolean = false;
+  constructor(public router: Router) {}
+
+  ngOnInit(): void {
+    this.isUserOnline
+      ? /**
+         * Redirect user to main form where he can select sonelgaz service
+         */
+        console.log('redirect user to main form')
+      : /**
+         * Redirect user to login page
+         */
+        this.router.navigate(['login']);
+  }
 }

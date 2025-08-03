@@ -1,0 +1,243 @@
+@use "./color" as color;
+
+.welcome-screen {
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    rgba(color.$sonelgaz_orange_light, 1) 0%,
+    rgba(color.$sonelgaz_orange_dark, 1) 100%
+  );
+  width: 100%;
+  height: 100%;
+  display: flex;
+
+  .welcome-screen-container {
+    margin: 60% auto auto auto;
+    width: 100%;
+
+    .logo-container {
+      margin: auto;
+      min-width: 250px;
+
+      img {
+        margin: auto;
+        width: 100px !important;
+        margin: auto;
+      }
+    }
+
+    .welcome-title {
+      color: color.$sonelgaz_blue;
+      font-weight: 700;
+      margin: auto;
+      text-align: center;
+      font-size: 19px;
+    }
+
+    .welcome-title--ar {
+      font-weight: 900;
+      font-size: 21px;
+    }
+
+    .welcome-text {
+      font-size: 14px;
+      color: rgba(white, 0.7);
+      text-align: center;
+      margin: auto;
+      transition-duration: 1000ms;
+      transition-delay: 2450ms;
+      line-height: 1.1;
+      max-width: 320px;
+    }
+
+    .big-welcome-title {
+      font-weight: 300;
+      color: white;
+      text-align: center;
+      max-width: 320px;
+      line-height: 1.2;
+      margin: auto;
+
+      span {
+        font-weight: 800;
+      }
+    }
+
+    .p-floatlabel {
+      width: calc(100% - 50px);
+      margin: auto;
+      display: flex;
+
+      input {
+        flex: 1;
+        background: rgba(white, 0.1);
+        color: white;
+        border: none;
+        border: 1px solid rgba(white, 0.2);
+
+        &:focus {
+          border: 1px solid rgba(color.$sonelgaz_blue, 1);
+        }
+      }
+
+      p-password {
+        flex: 1;
+        background: rgba(white, 0.1);
+        color: white;
+      }
+
+      svg {
+        color: white !important;
+      }
+
+      label {
+        color: rgba(white, 0.5);
+      }
+    }
+
+    p-inputotp {
+      margin: auto;
+
+      input {
+        background: rgba(white, 0.1);
+        color: white;
+        border: none;
+        border: 1px solid rgba(white, 0.2);
+      }
+    }
+
+    .auth-button {
+      margin: auto !important;
+      width: calc(100% - 50px) !important;
+
+      button {
+        height: 40px !important;
+        flex: 1;
+        width: 100%;
+        background: color.$sonelgaz_blue !important;
+        border: none !important;
+      }
+    }
+
+    .auth-button--white {
+      button {
+        background: rgba(white, 0.15) !important;
+      }
+    }
+
+    .auth-button--link {
+      button {
+        height: 40px !important;
+        border: none !important;
+        color: white;
+      }
+    }
+
+    .auth-button--code-verification {
+      button {
+        height: 40px !important;
+        flex: 1;
+        width: 100%;
+        background: color.$sonelgaz_blue !important;
+        border: none !important;
+      }
+    }
+
+    .line {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      transition-duration: 1000ms;
+      transition-delay: 2750ms !important;
+
+      .line-inside {
+        width: 100px;
+        height: 1px;
+        background: rgba(white, 0.5);
+      }
+
+      .line-inside,
+      span {
+        margin: auto 0;
+      }
+
+      span {
+        color: rgba(white, 0.5);
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+  }
+
+  .branding {
+    position: absolute;
+    inset: auto 0 30px 0;
+    display: flex;
+    padding-right: 20px;
+    padding-left: 20px;
+    display: flex;
+    justify-content: space-between;
+
+    p {
+      margin: auto auto 0 0;
+      font-size: 14px;
+      color: white;
+      font-weight: 400;
+      transition-duration: 1000ms;
+      transition-delay: 2150ms !important;
+    }
+
+    img {
+      height: 50px;
+      margin: auto 0;
+      transition-duration: 1000ms;
+      transition-delay: 3350ms !important;
+    }
+  }
+}
+
+.___hidden {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateX(-7%);
+  transition: all 3000ms cubic-bezier(0.3, 0.7, 0, 1);
+}
+
+.___animate {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateX(0);
+}
+
+.move-to-top-anim-1 {
+  transform: translateY(-30%);
+  transition: all 1000ms cubic-bezier(0.3, 0.7, 0, 1);
+}
+
+.delay-250ms {
+  transition-delay: 250ms !important;
+}
+
+.delay-2150ms {
+  transition-delay: 2150ms !important;
+}
+
+.delay-2350ms {
+  transition-delay: 2350ms !important;
+}
+
+.delay-2450ms {
+  transition-delay: 2450ms !important;
+}
+
+.delay-2550ms {
+  transition-delay: 2550ms !important;
+}
+
+.delay-2650ms {
+  transition-delay: 2650ms !important;
+}
+
+.delay-2800ms {
+  transition-delay: 2800ms !important;
+}
